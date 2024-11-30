@@ -1,0 +1,5 @@
+version: 2
+
+models:
+    - name: batting
+      description: "Table stores the batting records of Zen cricket players"
