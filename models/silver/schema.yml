@@ -3,3 +3,51 @@ version: 2
 models:
     - name: batting
       description: "Table stores the batting records of Zen cricket players"
+      columns:
+          - name: season_nm
+            description: "Name of tournament season"
+          - name: season_rank
+            description: "Tournament season rank of the player"
+          - name: player_nm
+            description: "Name of the player"
+          - name: group_nm
+            description: "Group Name of the tournament season"
+          - name: team_nm
+            description: "Name of the team"
+          - name: match_cnt
+            description: "Total Matches played"
+          - name: innings_cnt
+            description: "Total innings played"
+          - name:  notout_cnt
+            description: "Total innings count the player did not get out"
+          - name: run_cnt
+            description: "Total runs scored by the player"
+          - name: four_cnt
+            description: "Total boundaries scored by the player"
+          - name: six_cnt
+            description: "Total sixes scored by the player"
+          - name: fifty_cnt
+            description: "Total fifties scored by the player"
+          - name: hundred_cnt
+            description: "Total hundreds scored by the player"
+          - name: high_score
+            description: "Highest score scored by the player"
+          - name: strike_rate
+            description: "Strike rate of the player for given tournament season"
+          - name: batting_avg
+            description: "Batting average of the player for given tournament season"
+          - name: bat_attack_rate
+            description: "Attack rate measure is defined as strike_rate * batting_avg to measure how fast a player scores run in a tournament"
+          - name: created_utc
+            description: "Created UTC timestamp of the record"
+          - name: created_by
+            description: "Created user of the record"
+          - name: updated_utc
+            description: "Updated UTC timestamp of the record"
+          - name: updated_by
+            description: "Updated user of the record"
+          - name: source_nm
+            description: "Source name of the dataset"
+          
+          
+
