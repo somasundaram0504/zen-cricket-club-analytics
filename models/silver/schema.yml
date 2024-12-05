@@ -113,5 +113,42 @@ models:
           description: "Updated user of the record"
         - name: source_nm
           description: "Source name of the dataset"
+    - name: "players"
+      description: "Table stores the player details of Zen cricket players"
+      columns:
+        - name : player_id
+          description : "Id of the player"
+        - name: player_nm
+          description: "Name of the player"
+        - name: season_nm
+          description: "Name of tournament season"
+        - name: division_nm
+          description: "Name of the division"
+        - name: team_nm
+          description: "Name of the team"
+        - name: season_nm_lst
+          description: "List of seasons played"
+        - name: division_nm_lst
+          description: "List of divisions played"
+        - name: team_nm_lst
+          description: "List of teams played"
+        - name: team_cnt
+          description: "Count of teams played"
+        - name: season_cnt
+          description: "Count of seasons played"
+        - name: created_utc
+          description: "Created UTC timestamp of the record"
+        - name: created_by
+          description: "Created user of the record"
+        - name: updated_utc
+          description: "Updated UTC timestamp of the record"
+        - name: updated_by
+          description: "Updated user of the record"
+        - name: source_nm
+          description: "Source name of the dataset"
+
+          
+
+
           
 

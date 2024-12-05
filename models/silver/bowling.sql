@@ -1,27 +1,23 @@
+{{ config(materialized='table') }}
+
 with bowling_combined as 
 (
 select 
 season_nm,season_rank,player_nm,group_nm,team_nm,
 matches,innings,CAST(overs as STRING) as overs,runs,wickets,bbf,maidens,dots,economy,avg,strike_rate,hat_trick,four_wk_haul,five_wk_haul,
 wides,noballs
-,current_timestamp() as created_utc,'dbt_svc_acct_user' as created_by,
-current_timestamp() as updated_utc,'dbt_svc_acct_user' as updated_by,'cric_clubs' as source_nm
  from `zen-cricket-club.bronze.bowling_2024_spring_1` 
  UNION ALL
 select 
 season_nm,season_rank,player_nm,group_nm,team_nm,
 matches,innings,CAST(overs as STRING) as overs,runs,wickets,bbf,maidens,dots,economy,avg,strike_rate,hat_trick,four_wk_haul,five_wk_haul,
 wides,noballs
-,current_timestamp() as created_utc,'dbt_svc_acct_user' as created_by,
-current_timestamp() as updated_utc,'dbt_svc_acct_user' as updated_by,'cric_clubs' as source_nm
  from `zen-cricket-club.bronze.bowling_2024_spring_2` 
 UNION ALL
 select 
 season_nm,season_rank,player_nm,group_nm,team_nm,
 matches,innings,CAST(overs as STRING) as overs,runs,wickets,bbf,maidens,dots,economy,avg,strike_rate,hat_trick,four_wk_haul,five_wk_haul,
 wides,noballs
-,current_timestamp() as created_utc,'dbt_svc_acct_user' as created_by,
-current_timestamp() as updated_utc,'dbt_svc_acct_user' as updated_by,'cric_clubs' as source_nm
  from `zen-cricket-club.bronze.bowling_2024_spring_3` 
 )
 ,
@@ -38,10 +34,10 @@ END as ball_cnt,
 ELSE CAST(overs as INT64)
 END)/innings) as NUMERIC)) as min_overs_bowled_cnt,
 round(CAST((1/strike_rate) * wickets as numeric),2) as bowl_attack_rate,
-trim(bbf) as best_bowling_figure,
-created_utc,created_by,
-updated_utc,updated_by,source_nm
+trim(bbf) as best_bowling_figure
 from bowling_combined)
 
-select bs.*, 
+select bs.*
+,current_timestamp() as created_utc,'dbt_svc_acct_user' as created_by,
+current_timestamp() as updated_utc,'dbt_svc_acct_user' as updated_by,'cric_clubs' as source_nm
 from bowling_stg bs
