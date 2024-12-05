@@ -36,7 +36,7 @@ from players_combined
 group by 1,2 )
 
 select 
-length(pc.player_nm) as leng,pc.*,season_nm_lst,division_nm_lst,team_nm_lst,team_cnt,season_cnt
+pc.*,season_nm_lst,division_nm_lst,team_nm_lst,team_cnt,season_cnt
 ,current_timestamp() as created_utc,'dbt_svc_acct_user' as created_by,
 current_timestamp() as updated_utc,'dbt_svc_acct_user' as updated_by,'cric_clubs' as source_nm
 from players_combined pc LEFT JOIN
