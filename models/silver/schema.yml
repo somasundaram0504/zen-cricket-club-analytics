@@ -41,7 +41,7 @@ models:
       - name: bat_attack_rate
         description: "Attack rate measure is defined as bat_strike_rate * batting_avg to measure how fast a player scores more runs in a tournament"
       - name: "bat_opportunity_rate"
-        description: "Defines the batting opportunity of the player"
+        description: "Defines the batting opportunity given to the player"
       - name: created_utc
         description: "Created UTC timestamp of the record"
       - name: created_by
@@ -106,7 +106,7 @@ models:
       - name: "best_bowling_figure"
         description: "Best bowling figure of the tournament"
       - name: "bowl_opportunity_rate"
-        description: "Defines the bowling opportunity of the player"
+        description: "Defines the bowling opportunity given to the player"
       - name: created_utc
         description: "Created UTC timestamp of the record"
       - name: created_by

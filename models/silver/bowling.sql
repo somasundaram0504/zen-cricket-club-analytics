@@ -52,6 +52,7 @@ END as ball_cnt,
 ELSE CAST(overs as INT64)
 END)/innings) as NUMERIC)) as min_overs_bowled_cnt,
 round(CAST((1/strike_rate) * wickets as numeric),2) as bowl_attack_rate,
+ROUND(CAST((innings/matches) * 100 as numeric),2) as bowl_opportunity_rate,
 trim(bbf) as best_bowling_figure
 from bowling_combined bc
  LEFT JOIN 
