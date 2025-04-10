@@ -9,6 +9,4 @@ The final raw data and aggregates are stored in Google's BigQuery platform(DataW
 Kindly note the data of Friendly Cup Dallas 2024 Spring, Summer tournaments were extracted for this assignment. 
 
 Tech Stack:
-Data Warehouse - Google BigQuery
-Data Transformation - DBT
-Reporting Tool - Power BI
+Data Warehouse - Google BigQuery | Data Transformation - DBT | Reporting Tool - Power BI;
